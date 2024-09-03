@@ -2,8 +2,8 @@ function ColorMyPencils(color)
 	color = color or "rose-pine-moon"
 	vim.cmd.colorscheme(color)
 
-	vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-	vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+	-- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+	-- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 end
 
 return {
@@ -25,6 +25,26 @@ return {
 	{ "scottmckendry/cyberdream.nvim" },
 	{ "AlexvZyl/nordic.nvim" },
 	{ "rebelot/kanagawa.nvim" },
+  { "sainnhe/sonokai" },
+  { "navarasu/onedark.nvim" },
+  { "neanias/everforest-nvim" },
+
+  {
+    "0xstepit/flow.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
+    config = function()
+      require("flow").setup{
+        transparent = false, -- Set transparent background.
+        fluo_color = "pink", --  Fluo color: pink, yellow, orange, or green.
+        mode = "normal", -- Intensity of the palette: normal, bright, desaturate, or dark. Notice that dark is ugly!
+        aggressive_spell = false, -- Display colors for spell check.
+      }
+
+      -- vim.cmd "colorscheme flow"
+    end,
+  },
 
 	{
 		"folke/tokyonight.nvim",
